@@ -1,7 +1,10 @@
 # 🛒 **Retail Sales Analysis (SQL Project)**
 
-## 📊 **Overview**
-This project focuses on analyzing retail sales data using SQL to uncover insights into customer behavior, product performance, and sales patterns. It demonstrates how structured queries can be used for data cleaning, validation, and exploratory analysis within a relational database.
+## 📊 Overview  
+This project analyzes retail sales data using SQL to uncover actionable business insights related to customer behavior, product performance, and sales trends.
+
+The analysis focuses on transforming raw transactional data into meaningful insights that can support decision-making in areas such as inventory planning, customer targeting, and revenue optimization.
+
 
 **Objectives**
 - ✅ Create and manage a retail sales database.
@@ -35,6 +38,14 @@ This project focuses on analyzing retail sales data using SQL to uncover insight
 3. Validated data integrity and null values.
 4. Explored customer and category diversity.
 5. Analyzed sales performance and trends using **10 analytical SQL queries**.
+
+🧹 Data Cleaning Steps
+
+- Removed records with NULL values in key columns (customer_id, total_sale)
+- Verified data types for all columns
+- Checked for duplicate transaction IDs
+- Ensured consistency in category and gender fields
+
 
 ## 🔍 **Detailed Analysis Queries**
 
@@ -101,7 +112,26 @@ WITH hourly_sale AS (
     FROM retail_sales
 )
 SELECT shift, COUNT(*) as total_orders FROM hourly_sale GROUP BY shift;
+
+### **Q.10** Sales by time shift
+```sql
+SELECT sale_date, SUM(total_sale) AS daily_revenue
+FROM retail_sales
+GROUP BY sale_date
+ORDER BY sale_date;
+
+
 ```
+
+💡 Business Questions Answered
+
+- Which product categories generate the highest revenue?
+- Who are the top customers contributing to sales?
+- What are the peak sales months and seasonal trends?
+- How does customer demographics (age, gender) affect purchasing behavior?
+- What time of day has the highest sales activity?
+
+
 
 ## 🛠️ **Technologies Used**
 <div align="center">
@@ -112,11 +142,14 @@ SELECT shift, COUNT(*) as total_orders FROM hourly_sale GROUP BY shift;
 
 </div>
 
-## 💡 **Key Insights**
-- 🔥 **Top-selling categories** and **high-performing months** identified
-- 👥 **Customer demographics** correlated with purchase preferences
-- ⏰ **Category-wise** and **time-shift-based** demand distribution revealed
-- 🏆 **Top customers** identified for loyalty programs
+## 💡 Key Insights
+
+- Clothing and Electronics categories generated the highest revenue, indicating strong customer demand.
+- Peak sales were observed in specific months, showing seasonal buying behavior.
+- High-value transactions (>1000) contributed significantly to total revenue.
+- Female customers showed higher transaction counts in certain categories.
+- Evening hours recorded the highest number of transactions, suggesting peak shopping time.
+- Top 5 customers contributed a significant portion of total sales, indicating potential for loyalty programs.
 
 ## 🏃‍♂️ **How to Run the Project**
 
