@@ -187,5 +187,14 @@ SELECT
 FROM hourly_sale
 GROUP BY shift;
 
+
+-- Q.10 Revenue Trend Over Time
+
+SELECT sale_date, SUM(total_sale) AS daily_revenue
+FROM retail_sales
+GROUP BY sale_date
+ORDER BY sale_date;
+
+
 -- End of project
 
