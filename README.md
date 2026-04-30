@@ -135,7 +135,9 @@ ORDER BY sale_date;
 
 
 ## 🛠️ **Technologies Used**
-<div align="center">
+- SQL (MySQL)
+- Data Cleaning
+- Data Analysis
 
 
 
