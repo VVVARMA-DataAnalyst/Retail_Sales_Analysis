@@ -112,8 +112,9 @@ WITH hourly_sale AS (
     FROM retail_sales
 )
 SELECT shift, COUNT(*) as total_orders FROM hourly_sale GROUP BY shift;
+```
 
-### **Q.10** Sales by time shift
+### **Q.11** Revenue Trend Over Time
 ```sql
 SELECT sale_date, SUM(total_sale) AS daily_revenue
 FROM retail_sales
